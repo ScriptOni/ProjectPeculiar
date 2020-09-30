@@ -31,7 +31,7 @@ public class AppFrame extends JFrame {
     public void setFramePane(Container container){
         setContentPane(container);
     }
-    public void setPeculiarIcon(String iconURL) {
+    public void setFrameIcon(String iconURL) {
         super.setIconImage(new ImageIcon(iconURL).getImage());
     }
     public void showFrame() {

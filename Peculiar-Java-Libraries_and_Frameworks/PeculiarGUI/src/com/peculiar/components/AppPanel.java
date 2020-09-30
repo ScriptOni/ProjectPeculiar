@@ -9,16 +9,10 @@ import javax.swing.border.Border;
 
 public class AppPanel extends JPanel implements AppUIInterface{
     
-    private int width = 500,height = 500;
-    private Color bColor;
-    private Color fcolor;
-    
     public AppPanel(){
         super();
     }
     public void setPanelSize(int width,int height){
-        this.width =width;
-        this.height = height;
         super.setPreferredSize(new Dimension(width, height));
     }
    

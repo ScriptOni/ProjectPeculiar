@@ -8,20 +8,20 @@ import java.awt.LayoutManager;
 public  class Application extends AppFrame {
     public Application() {
         super();
-        setPeculiarIcon("background.jpg");
+        setFrameIcon("background.jpg");
         super.setLocationRelativeTo(null);
     }
     public Application(AppLabel peculiarLabel) {
 
         setFramePane(peculiarLabel);
-        setPeculiarIcon("background.jpg");
+        setFrameIcon("background.jpg");
         super.setLocationRelativeTo(null);
         
     }
     public Application(AppPanel peculiarPanel) {
 
         setFramePane(peculiarPanel);
-        setPeculiarIcon("background.jpg");
+        setFrameIcon("background.jpg");
         super.setLocationRelativeTo(null);
        
     }
@@ -36,7 +36,7 @@ public  class Application extends AppFrame {
 
         
     public void setAppIcon(String iconURL) {
-        super.setPeculiarIcon(iconURL);
+        super.setFrameIcon(iconURL);
     }
     public void setAppResizable(boolean isResizable) {
         super.setResizable(isResizable);
