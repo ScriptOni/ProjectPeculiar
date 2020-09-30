@@ -1,5 +1,6 @@
 package com.peculiar.app;
 
+import com.peculiar.app.auth.UserModel;
 import com.peculiar.app.initial.ContentPane;
 import com.peculiar.components.AppButton;
 import com.peculiar.components.AppLabel;
@@ -12,19 +13,22 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class AppAuthForm extends Application {
-    private AppLabel titleLabel;
-    private AppButton loginBtn;
-    private AppButton registerBtn;
-    private AppButton recoveryBtn;
+    public AppLabel titleLabel;
+    public AppButton loginBtn;
+    public AppButton registerBtn;
+    public AppButton recoveryBtn;
+    public AppButton submitBtn;
+    public AppButton saveBtn;
 
     private AppLoginForm loginForm;
     private AppRegisterForm registerForm;
     private AppRecoveryForm recoveryForm;
-    private final ArrayList<Object> database;
+    private ArrayList<UserModel> database;
+    
 
     public AppAuthForm() {
         super(new ContentPane());
-        database = new ArrayList<Object>();
+        database = new ArrayList<UserModel>();
         setAppInit();
         setAppComponents();
         setAppConstraints();
@@ -35,7 +39,6 @@ public class AppAuthForm extends Application {
         setAppSize(AppDefault.WIDTH, AppDefault.HEIGHT);
         setAppResizable(false);
         setAppLayout(AppLayout.GRIDBAG);
-        setAppIcon("background.jpg");
     }
 
     public void setAppComponents() {
@@ -45,16 +48,19 @@ public class AppAuthForm extends Application {
         registerBtn = new AppButton("register");
 
         loginForm = new AppLoginForm();
+        submitBtn = loginForm.getSubmitBtn();
         registerForm = new AppRegisterForm();
+        saveBtn = registerForm.getSaveBtn();
         recoveryForm = new AppRecoveryForm();
+
     }
 
     public void setAppUI() {
         loginBtn.setButtonSize(200, 50);
         registerBtn.setButtonSize(200, 50);
-        titleLabel.setUI(new java.awt.Font("Candara", 1, 50), AppColor.COLOR_PRIMARY, new java.awt.Color(11, 19, 201));
-        loginBtn.setUI(new java.awt.Font("Candara", 1, 23), new java.awt.Color(11, 19, 201), AppColor.COLOR_PRIMARY);
-        registerBtn.setUI(new java.awt.Font("Candara", 1, 23), new java.awt.Color(11, 19, 201), AppColor.COLOR_PRIMARY);
+        titleLabel.setUI(new java.awt.Font("Candara", 1, 50), AppColor.PRIMARY, new java.awt.Color(11, 19, 201));
+        loginBtn.setUI(new java.awt.Font("Candara", 1, 23), new java.awt.Color(11, 19, 201), AppColor.PRIMARY);
+        registerBtn.setUI(new java.awt.Font("Candara", 1, 23), new java.awt.Color(11, 19, 201), AppColor.PRIMARY);
     }
     public void setAppListener() {
 
@@ -74,12 +80,13 @@ public class AppAuthForm extends Application {
         gc.insets = new Insets(10, 5, 10, 5);
         add(registerBtn, gc);
     }
-    public void setAuthenticate(Application app, ArrayList<Object> database) {
+    public void setAuthenticate(Application app, ArrayList<UserModel> database) {
+        this.database = database;
         loginBtn.addActionListener(e -> loginBtnAction());
         registerBtn.addActionListener(e -> registerBtnAction());
-        recoveryBtn.addActionListener(e -> recoveryBtnAction(database));
-        loginForm.getSubmitBtn().addActionListener(e -> submitBtnAction(app, database));
-        registerForm.getSaveBtn().addActionListener(e -> saveBtnAction(database));
+        recoveryBtn.addActionListener(e -> recoveryBtnAction());
+        submitBtn.addActionListener(e -> submitBtnAction(app));
+        saveBtn.addActionListener(e -> saveBtnAction());
     }
 
     private void loginBtnAction() {
@@ -87,22 +94,23 @@ public class AppAuthForm extends Application {
         hideApp();
     }
     private void registerBtnAction() {
+        //need user data here
         registerForm.showApp();
         hideApp();
     }
-
-    private void recoveryBtnAction(ArrayList<Object> database) {
-
+    private void recoveryBtnAction() {
+        //need user data here
         recoveryForm.showApp();
         this.hideApp();
     }
-    private void submitBtnAction(Application app, ArrayList<Object> database) {
+    private void submitBtnAction(Application app) {
+        //need user data here
         loginForm.hideApp();
         app.showApp();
     }
-    private void saveBtnAction(ArrayList<Object> database) {
-
-        JOptionPane.showMessageDialog(null, "successfully register your account!");
+    private void saveBtnAction() {
+        //need user data here
+        JOptionPane.showMessageDialog(null, "your account are successfully register!");
         registerForm.hideApp();
         showApp();
     }

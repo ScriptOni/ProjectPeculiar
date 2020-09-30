@@ -7,7 +7,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.border.Border;
 
-public class AppButton extends JButton implements AppUIInterface {
+public class AppButton extends JButton implements AppUIElements {
     public AppButton() {
         setBorderPainted(false);
     }

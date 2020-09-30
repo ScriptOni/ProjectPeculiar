@@ -8,20 +8,20 @@ import java.awt.LayoutManager;
 public  class Application extends AppFrame {
     public Application() {
         super();
-        setFrameIcon("background.jpg");
+        setFrameIcon("icon.jpg");
         super.setLocationRelativeTo(null);
     }
     public Application(AppLabel peculiarLabel) {
 
         setFramePane(peculiarLabel);
-        setFrameIcon("background.jpg");
+        setFrameIcon("icon.jpg");
         super.setLocationRelativeTo(null);
         
     }
     public Application(AppPanel peculiarPanel) {
 
         setFramePane(peculiarPanel);
-        setFrameIcon("background.jpg");
+        setFrameIcon("icon.jpg");
         super.setLocationRelativeTo(null);
        
     }
@@ -33,7 +33,9 @@ public  class Application extends AppFrame {
     public void setAppSize(int width, int height) {
         super.setFrameSize(width, height);
     }
-
+    public void setAppCenterOnScreen(){
+        super.setLocationRelativeTo(null);
+    }
         
     public void setAppIcon(String iconURL) {
         super.setFrameIcon(iconURL);

@@ -7,7 +7,7 @@ import com.peculiar.constants.AppDefault;
 import com.peculiar.constants.AppLayout;
 import java.awt.GridBagConstraints;
 
-public class AppLoginForm extends Application {
+class AppLoginForm extends Application {
 
     private AppButton submitBtn;
     public AppLoginForm() {
@@ -21,7 +21,6 @@ public class AppLoginForm extends Application {
         setAppSize(AppDefault.WIDTH, AppDefault.HEIGHT);
         setAppResizable(false);
         setAppLayout(AppLayout.GRIDBAG);
-        setAppIcon("background.jpg");
     }
     private void setAppComponents() {
         submitBtn = new AppButton("submit");
@@ -32,7 +31,7 @@ public class AppLoginForm extends Application {
         add(submitBtn, gc);
     }
     private void setAppUI() {
-        submitBtn.setUI(new java.awt.Color(11, 19, 201), AppColor.COLOR_PRIMARY);
+        submitBtn.setUI(new java.awt.Color(11, 19, 201), AppColor.PRIMARY);
     }
     private void setAppListener() {
 

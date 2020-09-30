@@ -6,9 +6,9 @@ import java.awt.Font;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.border.Border;
-import com.peculiar.components.AppUIInterface;
+import com.peculiar.components.AppUIElements;
 
-public class AppLabel extends JLabel implements AppUIInterface {
+public class AppLabel extends JLabel implements AppUIElements {
 
     public AppLabel() {
         super();

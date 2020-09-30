@@ -16,7 +16,7 @@ import java.awt.GridBagConstraints;
  *
  * @author admin
  */
-public class AppRegisterForm extends Application {
+class AppRegisterForm extends Application {
     private AppButton saveBtn;
 
     public AppRegisterForm() {
@@ -29,7 +29,6 @@ public class AppRegisterForm extends Application {
         setAppSize(AppDefault.WIDTH, AppDefault.HEIGHT);
         setAppResizable(false);
         setAppLayout(AppLayout.GRIDBAG);
-        setAppIcon("background.jpg");
     }
 
     private void setAppComponents() {
@@ -42,7 +41,7 @@ public class AppRegisterForm extends Application {
     }
 
     private void setAppUI() {
-        saveBtn.setUI(new java.awt.Color(11, 19, 201), AppColor.COLOR_PRIMARY);
+        saveBtn.setUI(new java.awt.Color(11, 19, 201), AppColor.PRIMARY);
     }
 
     public AppButton getSaveBtn() {

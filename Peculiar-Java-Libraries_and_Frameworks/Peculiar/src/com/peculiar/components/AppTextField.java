@@ -5,8 +5,10 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
 
-public class AppTextField extends JTextField implements AppUIInterface {
-
+public class AppTextField extends JTextField implements AppUIElements {
+    public AppTextField(int col) {
+        super(col);
+    }
     public void setUI(Border border, Font font, Color bColor, Color fcolor) {
         setBorder(border);
         setFont(font);

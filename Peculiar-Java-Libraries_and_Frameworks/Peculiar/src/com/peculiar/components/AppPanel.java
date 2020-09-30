@@ -7,7 +7,7 @@ import java.awt.Font;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 
-public class AppPanel extends JPanel implements AppUIInterface{
+public class AppPanel extends JPanel implements AppUIElements{
     
     public AppPanel(){
         super();

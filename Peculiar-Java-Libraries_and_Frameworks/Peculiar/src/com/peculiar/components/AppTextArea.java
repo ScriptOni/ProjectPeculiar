@@ -7,7 +7,7 @@ import javax.swing.JTextArea;
 import javax.swing.border.Border;
 
 
-public class AppTextArea extends JTextArea implements AppUIInterface{
+public class AppTextArea extends JTextArea implements AppUIElements{
       public void setUI(Border border, Font font, Color bColor, Color fcolor) {
         setBorder(border);
         setFont(font);

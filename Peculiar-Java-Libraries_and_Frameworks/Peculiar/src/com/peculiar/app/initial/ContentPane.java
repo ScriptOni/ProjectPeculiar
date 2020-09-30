@@ -5,6 +5,6 @@ import com.peculiar.constants.AppColor;
 
 public class ContentPane extends AppPanel {
     public ContentPane() {
-        setUI(AppColor.COLOR_PRIMARY, AppColor.COLOR_SECONDARY);
+        setUI(AppColor.PRIMARY, AppColor.SECONDARY);
     }
 }
