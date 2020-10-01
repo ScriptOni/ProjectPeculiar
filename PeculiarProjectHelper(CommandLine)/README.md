@@ -1,1 +1,1 @@
-This program is experimental and for education purpose.
+This program is used for experimental and education purpose.
