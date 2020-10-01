@@ -37,7 +37,7 @@ rem setting title
 title %APPLICATION_TITLE%
 rem moving to the working parent directory
 cd %WORKING_PATH%
-rem making the working directory
+rem creating the working directory
 mkdir %WORKING_ENV%
 cls
 :main
@@ -52,11 +52,11 @@ echo 		   **********************************************************************
 echo 		 *** **************** ** Date: %date%          ** Owner: Mark Wayne Menorca          ***
 echo 		 *** ******    ****** ** Time: %time%         **     [Private Property]             ***
 echo 		 *** ******    ****** **********************************************************************
-echo 		 *** ******    ******     **    **      ** ****** **  ** ***** **    ****** ***** ******* **
-echo 		 *** ****************    ****  **      ** **  ** **  ** **    **    **  ** **    **   **  **
-echo 		 *** ********           ** ** ** **   ** ****** ****** ***** **    ****** ***** *******   **
-echo 		 *** ********          **  **** **   ** **     **  ** **    **    **     **    **  **     **
-echo 		 *** ********         **   *** ******* **     **  ** ***** ***** **     ***** **   **     **            
+echo 		 *** ******    ******          ** **   **  ****** **  ** ***** **    ****** ***** ******* **
+echo 		 *** ****************         ** **   **  **  ** **  ** **    **    **  ** **    **   **  **
+echo 		 *** ********           **   ** **   **  ****** ****** ***** **    ****** ***** *******   **
+echo 		 *** ********          **   **  **  **  **     **  ** **    **    **     **    **  **     **
+echo 		 *** ********         *******    **    **     **  ** ***** ***** **     ***** **   **     **            
 echo 		 *******************************************************************************************
 echo 		 -------------------------------------------------------------------------------------------
 echo  		 *** commands:                     ********************************************************* 
@@ -203,8 +203,6 @@ goto pass
 :c1
 echo Compile package via Main package with Model-View-Controller-Interface                                         
 mkdir src\%packagename% src\views\auth  src\models src\controllers src\interfaces
-
-
 copy %ADD_AUTH_PACKAGE% %PACKAGE_AUTH%
 copy %ADD_VIEWS_PACKAGE% %PACKAGE_VIEWS%
 copy %ADD_MODELS_PACKAGE% %PACKAGE_MODELS%
@@ -228,10 +226,8 @@ echo Start Compiling...
 mkdir dist
 mkdir dist\lib && copy lib dist\lib
 mkdir dist\assets && copy assets dist\assets
-
 javac -d . -cp lib src/%packagename%/*.java src/views/*.java src/views/auth/*.java src/models/*.java src/controllers/*.java src/interfaces/*.java || goto compilation_error
 set classes=com/%packagename%/*.class com/models/*.class com/controllers/*.class com/views/*.class com/views/auth/*.class com/interfaces/*.class
-
 goto pass
 :c2
 echo Compile package via Main Package with View and Database                                             
@@ -258,7 +254,6 @@ mkdir dist\lib && copy lib dist\lib
 mkdir dist\assets && copy assets dist\assets
 javac -d . -cp lib src/%packagename%/*.java src/views/*.java src/databases/*.java || goto compilation_error
 set classes=com/%packagename%/*.class com/views/*.class com/databases/*.class
-
 goto pass
 :c3
 echo Compile package via Main Package with Database only                                                
@@ -284,7 +279,6 @@ mkdir dist\lib && copy lib dist\lib
 mkdir dist\assets && copy assets dist\assets
 javac -d . -cp lib src/%packagename%/*.java src/databases/*.java || goto compilation_error
 set classes=com/%packagename%/*.class com/databases/*.class
-
 goto pass
 :c4
 echo Compile package via Main package with View only                                                     
@@ -310,7 +304,6 @@ mkdir dist\lib && copy lib dist\lib
 mkdir dist\assets && copy assets dist\assets
 javac -d . -cp lib src/%packagename%/*.java src/views/*.java || goto compilation_error
 set classes=com/%packagename%/*.class com/views/*.class
-
 goto pass
 :c5
 echo Compile package via  Main package Only
@@ -435,7 +428,6 @@ echo ...........................................................................
 javac -d . -p lib src/%packagename%/*.java src/views/*.java src/databases/*.java || goto compilation1_error
 set classes=com/%packagename%/*.class com/views/*.class com/databases/*.class
 echo ..................................................................................
-
 goto pass1
 :c33
 echo Compile package via Main Package with Database only...                                         
@@ -444,17 +436,14 @@ echo ...........................................................................
 javac -d . -p lib src/%packagename%/*.java src/databases/*.java || goto compilation1_error
 set classes=com/%packagename%/*.class com/databases/*.class
 echo ..................................................................................
-
 goto pass1
 :c44
 echo Compile package via Main package with View only...                                             
 echo Start Compiling...
 echo ..................................................................................
-
 javac -d . -p lib src/%packagename%/*.java src/views/*.java || goto compilation1_error
 set classes=com/%packagename%/*.class com/views/*.class
 echo ..................................................................................
-
 goto pass1
 :c55
 echo Compile package via  Main package Only...
@@ -485,7 +474,6 @@ echo.
 set cmd=start "%projectname%" cmd /K
 %cmd% java -jar dist/%projectname%.jar  || goto compilation1_error
 goto compilation1_success
-
 Rem ==============================================================================================================
 REM Expore Project Command SubRoutine
 :explore
@@ -675,9 +663,6 @@ echo ===========================================================================
 echo ================================ [Compiling Failed! ] ===================================
 echo ==========================================================================================
 goto ask1
-
-
-
 :ask
 set compile_re=nul
 set /p compile_re=[ ================ ]recompile [y/n]: 
@@ -694,7 +679,6 @@ if %compiletype_re% == 3 goto yes_compile3
 if %compiletype_re% == 4 goto yes_compile4
 if %compiletype_re% == 5 goto yes_compile5
 goto ask
-
 :ask1
 set compile_re1=nul
 set /p compile_re1=[ ================ ]recompile [y/n]: 
@@ -712,7 +696,6 @@ if %compiletype_re1% == 4 goto c44
 if %compiletype_re1% == 5 goto c55
 goto ask1 
 
-
 Rem ==============================================================================================================
 REM Return to Menu SubRoutine
 :return_menu
@@ -720,20 +703,3 @@ set choice=nul
 set /p choice=[ ================ ]return Menu[y]:  
 if %choice% == y goto main
 goto return_menu
-
-
-:: ===============================================================================================
-:: ========================================   RESERVE    =========================================
-:: ===============================================================================================
-
-REM :home
-REM cls
-REM color A
-REM echo.
-REM echo Going back to Home Directory...
-REM ping -n 2 127.0.0.1 >nul
-REM echo ========================================================================================= 
-REM cd C:/Users/admin/Desktop/Peculiar && cd
-REM echo ========================================================================================= 
-REM cls
-REM goto main           

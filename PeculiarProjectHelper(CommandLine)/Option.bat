@@ -6,8 +6,14 @@ cd %W_PATH%
 set cOption=nul
 :mainOPtion
 echo ========================================
-echo [0] Java Project Helper
-echo [1] Python Project Helper
+echo ------------ Project Helper ------------
+echo Option:
+echo [0] Java 			
+echo [1] Python  		
+echo [2] Kotlin 		
+echo [3] Jython
+echo [4] Nodejs
+echo [5] ToolBuild
 echo ========================================
 set /p cOption=choice: 
 if %cOption% == 0 call Java_Project_Helper.bat
