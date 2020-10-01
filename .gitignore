@@ -1,3 +1,5 @@
 *.class
 /Peculiar-Java-Libraries_and_Frameworks/Peculiar/build/
 *.exe 
+*.jar 
+*.class 
