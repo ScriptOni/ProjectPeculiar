@@ -114,5 +114,4 @@ public class AppAuthForm extends Application {
         registerForm.hideApp();
         showApp();
     }
-
 }

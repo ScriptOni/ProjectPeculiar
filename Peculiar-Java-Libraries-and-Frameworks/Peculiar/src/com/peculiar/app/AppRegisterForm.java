@@ -25,13 +25,13 @@ class AppRegisterForm extends Application {
         setAppComponents();
         setAppUI();
     }
-    private void setAppInit() {
+    public void setAppInit() {
         setAppSize(AppDefault.WIDTH, AppDefault.HEIGHT);
         setAppResizable(false);
         setAppLayout(AppLayout.GRIDBAG);
     }
 
-    private void setAppComponents() {
+    public void setAppComponents() {
         saveBtn = new AppButton("save");
 
         var gc = new GridBagConstraints();
@@ -40,12 +40,16 @@ class AppRegisterForm extends Application {
         add(saveBtn, gc);
     }
 
-    private void setAppUI() {
+    public void setAppUI() {
         saveBtn.setUI(new java.awt.Color(11, 19, 201), AppColor.PRIMARY);
     }
 
     public AppButton getSaveBtn() {
         return saveBtn;
+    }
+    @Override
+    public void setAppListener() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
