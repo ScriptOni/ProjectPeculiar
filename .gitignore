@@ -3,3 +3,4 @@
 *.exe 
 *.jar 
 *.class 
+/Peculiar-Java-Libraries-and-Frameworks/Peculiar/dist/
